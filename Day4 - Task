@@ -1,0 +1,67 @@
+ namespace Day_4___Task
+{
+    internal class Student
+    {
+        private string name;
+        private int age;
+        private float grade;
+
+        public Student(string name, int age, float grade)
+        {
+            this.name = name;
+            setAge(age);
+            setGrade(grade);
+        }
+
+        public void setName(string n)
+        {
+            name = n;
+        }
+        public string getName()
+        {
+            return name;
+        }
+
+        public void setAge(int a)
+        {
+            if (a > 5)
+                age = a;
+            else
+                Console.WriteLine("Invalid Age, Please Enter Age greater than 5.");
+        }
+        public int getAge()
+        {
+            return age;
+        }
+
+        public void setGrade(float g)
+        {
+            if (g >= 0 && g <= 100)
+                grade = g;
+            else
+                Console.WriteLine("Invalid grade, Please Enter grade between 0 and 100.");
+        }
+        public float getGrade()
+        {
+            return grade;
+        }
+
+        public void DisplayInfo()
+        {
+            Console.WriteLine($"Student_name: {name} , S_age: {age} , S_grade: {grade} .");
+        }
+    }
+
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Student s = new Student("Marawan", 20, 90);
+
+            Console.WriteLine(s.getName());
+            Console.WriteLine(s.getAge());
+            Console.WriteLine(s.getGrade());
+            s.DisplayInfo();
+        }
+    }
+}
